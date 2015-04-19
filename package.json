@@ -1,0 +1,36 @@
+{
+  "name": "interactive.gallery",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aekendall/interactive.gallery.git"
+  },
+  "keywords": [
+    "interactive",
+    "gallery",
+    "javascript",
+    "effects"
+  ],
+  "author": "Alan Kendall",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/aekendall/interactive.gallery/issues"
+  },
+  "homepage": "https://github.com/aekendall/interactive.gallery",
+  "devDependencies": {
+    "gulp": "^3.8.11",
+    "jasmine-core": "^2.2.0",
+    "karma": "^0.12.31",
+    "karma-chrome-launcher": "^0.1.8",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.3.5",
+    "karma-phantomjs-launcher": "^0.1.4",
+    "karma-safari-launcher": "^0.1.1",
+    "require-dir": "^0.3.0"
+  }
+}
