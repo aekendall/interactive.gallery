@@ -53,13 +53,31 @@ describe('coord2d', function() {
         expect(c.y).toBe(1);
     });
 
-    it('has static function for computing radius', function() {
+    it('has functions for computing radius', function() {
         expect(Coord2d.radiusFromXY).toBeDefined();
         expect(Coord2d.radiusFromXY(3, 4)).toBe(5);
+
+        var c = new Coord2d(3, 4);
+        expect(c.getRadius).toBeDefined();
+        expect(c.getRadius()).toBe(5);
     });
 
     it('has static function for computing angle in rad from x,y args', function() {
         expect(Coord2d.angleFromXY).toBeDefined();
         expect(Coord2d.angleFromXY(3, 4)).toBeCloseTo(0.92729521, 7);
+    });
+
+    it('has static function to measure the distance between two x,y points', function() {
+        expect(Coord2d.distBetween).toBeDefined();
+        expect(Coord2d.distBetween(17, 21, 14, 17)).toBe(5);
+    });
+
+    it('has method to normalize a coord to a radius of 1', function() {
+        var c = new Coord2d(3, 4);
+        expect(c.normalize).toBeDefined();
+        c = c.normalize();
+        expect(c.x).toBe(0.6);
+        expect(c.y).toBe(0.8);
+        expect(c.getRadius()).toBe(1);
     });
 });

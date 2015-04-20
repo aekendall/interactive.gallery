@@ -28,16 +28,17 @@
             this.x += x;
             this.y += y;
             return this;
+        },
+        getRadius: function() {
+            return Coord2d.radiusFromXY(this.x, this.y);
+        },
+        normalize: function() {
+            var r = this.getRadius();
+            this.x /= r;
+            this.y /= r;
+            return this;
         }
     }
-
-    Coord2d.radiusFromXY = function(x, y) {
-        return Math.sqrt(x * x + y * y);
-    };
-
-    Coord2d.angleFromXY = function(x, y) {
-        return Math.atan2(y, x);
-    };
 
     Coord2d.fromXY = function(x, y) {
         var c = new Coord2d();
@@ -47,6 +48,20 @@
     Coord2d.fromObject = function(o) {
         return Coord2d.fromXY(o.x, o.y);
     };
+
+    Coord2d.radiusFromXY = function(x, y) {
+        return Math.sqrt(x * x + y * y);
+    };
+
+    Coord2d.angleFromXY = function(x, y) {
+        return Math.atan2(y, x);
+    };
+
+    Coord2d.distBetween = function(x1, y1, x2, y2) {
+        var dx = x2 - x1,
+            dy = y2 - y1;
+        return Coord2d.radiusFromXY(dx, dy);
+    }
 
     function isObjectArg(arg) {
         return typeof arg === 'object';
