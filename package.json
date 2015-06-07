@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/aekendall/interactive.gallery",
   "devDependencies": {
+    "del": "^1.2.0",
     "gulp": "^3.8.11",
+    "gulp-cache": "^0.2.10",
     "jasmine-core": "^2.2.0",
     "karma": "^0.12.31",
     "karma-chrome-launcher": "^0.1.8",

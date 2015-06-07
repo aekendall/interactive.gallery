@@ -1,9 +1,10 @@
 var gulp = require('gulp'),
-    karma = require('karma').server;
+    karma = require('karma').server,
+    config = require('../config');
 
 gulp.task('test', function(done) {
     karma.start({
-        configFile: __dirname + '/../karma.conf.js',
+        configFile: __dirname + config.karma,
         singleRun: true
     }, done)
 });
