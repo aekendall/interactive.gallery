@@ -85,10 +85,22 @@ describe('coord2d', function() {
 
     it('library has a function for converting radians to degrees', function() {
         expect(Coord2d.radToDeg).toBeDefined();
+        expect(Coord2d.radToDeg(3*PI/2)).toBeCloseTo(270);
         expect(Coord2d.radToDeg(PI)).toBeCloseTo(180);
         expect(Coord2d.radToDeg(PI/2)).toBeCloseTo(90);
         expect(Coord2d.radToDeg(PI/3)).toBeCloseTo(60);
         expect(Coord2d.radToDeg(PI/4)).toBeCloseTo(45);
         expect(Coord2d.radToDeg(PI/6)).toBeCloseTo(30);
+    });
+
+    it('library has a function for converting from degrees to radians', function() {
+        expect(Coord2d.degToRad).toBeDefined();
+        expect(Coord2d.degToRad(0)).toBeCloseTo(0);
+        expect(Coord2d.degToRad(30)).toBeCloseTo(PI/6);
+        expect(Coord2d.degToRad(45)).toBeCloseTo(PI/4);
+        expect(Coord2d.degToRad(60)).toBeCloseTo(PI/3);
+        expect(Coord2d.degToRad(90)).toBeCloseTo(PI/2);
+        expect(Coord2d.degToRad(180)).toBeCloseTo(PI);
+        expect(Coord2d.degToRad(270)).toBeCloseTo(3*PI/2);
     });
 });

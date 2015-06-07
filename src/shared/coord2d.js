@@ -61,6 +61,10 @@
         return RAD_TO_DEG * r;
     }
 
+    Coord2d.degToRad = function(deg) {
+        return deg / RAD_TO_DEG;
+    }
+
     Coord2d.distBetween = function(x1, y1, x2, y2) {
         var dx = x2 - x1,
             dy = y2 - y1;
