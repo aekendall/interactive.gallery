@@ -57,6 +57,10 @@
         return Math.atan2(y, x);
     };
 
+    Coord2d.radToDeg = function(r) {
+        return RAD_TO_DEG * r;
+    }
+
     Coord2d.distBetween = function(x1, y1, x2, y2) {
         var dx = x2 - x1,
             dy = y2 - y1;

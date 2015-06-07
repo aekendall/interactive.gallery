@@ -1,4 +1,6 @@
 describe('coord2d', function() {
+    var PI = 3.14159265359;
+
     it('is defined', function() {
         expect(Coord2d).toBeDefined();
     });
@@ -79,5 +81,14 @@ describe('coord2d', function() {
         expect(c.x).toBe(0.6);
         expect(c.y).toBe(0.8);
         expect(c.getRadius()).toBe(1);
+    });
+
+    it('library has a function for converting radians to degrees', function() {
+        expect(Coord2d.radToDeg).toBeDefined();
+        expect(Coord2d.radToDeg(PI)).toBeCloseTo(180);
+        expect(Coord2d.radToDeg(PI/2)).toBeCloseTo(90);
+        expect(Coord2d.radToDeg(PI/3)).toBeCloseTo(60);
+        expect(Coord2d.radToDeg(PI/4)).toBeCloseTo(45);
+        expect(Coord2d.radToDeg(PI/6)).toBeCloseTo(30);
     });
 });
